@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+
+</head>
+<body>
+<center>
+
+
+</center>
+</body>
+</html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>J N M E D</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="index.html">J N M E D</a></h1>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+<!--          <li><a href="#about">About</a></li>-->
+<!--          <li><a href="#menu">Menu</a></li>-->
+<!--          <li><a href="#specials">Specials</a></li>-->
+<!--          <li><a href="#events">Events</a></li>-->
+<!--          <li><a href="#gallery">Gallery</a></li>-->
+<!--          <li><a href="#chefs">Chefs</a></li>-->
+<!--          <li><a href="#contact">Contact</a></li>-->
+<!--          <li class="book-a-table text-center"><a href="{% url 'dr_login' %}">DOCTOR</a></li>-->
+<!--          <li class="book-a-table text-center"><a href="{% url 'p_log' %}">PATIENT</a></li>-->
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="herop" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-center" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-7">
+
+        <h1><span><center><CENTRE>PATIENT  LOGIN</center></span></h1>
+
+<!--          <h2>Delivering great food for more than 18 years!</h2>-->
+
+          <div class="container-fluid" style="margin-top:0px">
+<!--<div class="container">-->
+  {{msg}}
+<!--  <h2><span>LOGIN</span></h2>-->
+
+<center>
+  <form action="{% url 'p_logAct' %}" method="post"  style="border:0px solid #ccc">{% csrf_token %}
+    <div class="form-group">
+<!--                      <div class="col-md-6 form-group">-->
+
+      <label for="user_id">User id:</label>
+      <input type="user_id" class="form-control" id="user_id" placeholder="enter your user id" name="user_id">
+    </div>
+<!--                    <div class="col-md-6 form-group">-->
+
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+    </div>
+
+
+    <a href="{% url 'p_regfrm' %}">patient registration</a>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">login</button>
+  </form>
+</center>
+
+</div>
+</div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

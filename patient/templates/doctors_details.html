@@ -1,0 +1,472 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <title>PATIENT HOME</title>-->
+<!--  <meta charset="utf-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>-->
+<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+<!--</head>-->
+<!--<style>-->
+<!--body {font-family: Arial, Helvetica, sans-serif;}-->
+<!--* {box-sizing: border-box}-->
+
+<!--input[type=text], input[type=password] {-->
+<!--  width: 100%;-->
+<!--  padding: 15px;-->
+<!--  margin: 5px 0 22px 0;-->
+<!--  display: inline-block;-->
+<!--  border: none;-->
+<!--  background: #f1f1f1;-->
+<!--}-->
+
+<!--input[type=text]:focus, input[type=password]:focus {-->
+<!--  background-color: #ddd;-->
+<!--  outline: none;-->
+<!--}-->
+
+<!--hr {-->
+<!--  border: 1px solid #f1f1f1;-->
+<!--  margin-bottom: 25px;-->
+<!--}-->
+
+<!--button {-->
+<!--  background-color: #4CAF50;-->
+<!--  color: white;-->
+<!--  padding: 14px 20px;-->
+<!--  margin: 8px 0;-->
+<!--  border: none;-->
+<!--  cursor: pointer;-->
+<!--  width: 100%;-->
+<!--  opacity: 0.9;-->
+<!--}-->
+
+<!--button:hover {-->
+<!--  opacity:1;-->
+<!--}-->
+
+<!--.cancelbtn {-->
+<!--  padding: 14px 20px;-->
+<!--  background-color: #f44336;-->
+<!--}-->
+
+<!--.cancelbtn, .signupbtn {-->
+<!--  float: left;-->
+<!--  width: 50%;-->
+<!--}-->
+
+<!--.container {-->
+<!--  padding: 16px;-->
+<!--}-->
+
+<!--.clearfix::after {-->
+<!--  content: "";-->
+<!--  clear: both;-->
+<!--  display: table;-->
+<!--}-->
+<!--@media screen and (max-width: 300px) {-->
+<!--  .cancelbtn, .signupbtn {-->
+<!--     width: 100%;-->
+<!--  }-->
+<!--}-->
+<!--</style>-->
+
+<!--<body>-->
+<!--<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">-->
+<!--&lt;!&ndash;  <a class="navbar-brand" href="">Logo</a>&ndash;&gt;-->
+<!--  <ul class="navbar-nav">-->
+<!--    <li class="nav-item">-->
+<!--      <a class="nav-link" href="{}">Home</a>-->
+<!--    </li>-->
+<!--    <li class="nav-item">-->
+<!--      <a class="nav-link" href="{% url 'dr_det' %}">view doctors</a>-->
+<!--    </li>-->
+<!--       <li class="nav-item">-->
+<!--      <a class="nav-link" href="{}">Sign up</a>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--</nav>-->
+<!--<div class="container-fluid" style="margin-top:80px">-->
+<!--<form action="{% url 'dr_det' %}" method="post">-->
+<!--    {% csrf_token %}-->
+<!--<select name="specialisation">-->
+<!--    <option value="select" >select</option>-->
+<!--    {% for x in dr_j %}-->
+<!--    <option value="{{ x.specialist }}">-->
+<!--        {{ x.specialist }}-->
+<!--    </option>-->
+
+<!--    {% endfor %}-->
+<!--</select>-->
+<!--    <input type="submit" value="search">-->
+<!--</form>-->
+<!--    {% if doctor_list %}-->
+<!--<table>-->
+<!--    <tr>-->
+<!--                <th>DOCTOR NAME</th>-->
+<!--                <th>SPECIALIST</th>-->
+<!--                <th>HOSPITAL</th>-->
+<!--                <th>TIME</th>-->
+<!--                <th>ADDRESS</th>-->
+<!--                <th>FEE</th>-->
+<!--        <th>ACTION</th>-->
+<!--    </tr>-->
+<!--     {% for x in doctor_list %}-->
+
+<!--    <tr>-->
+<!--        <td>{{x.name}}</td>-->
+<!--        <td>{{x.specialist}}</td>-->
+<!--        <td>{{x.hospital}}</td>-->
+<!--        <td>{{x.consultation_period}}</td>-->
+<!--        <td>{{x.address}}</td>-->
+<!--        <td>{{x.fee}}</td>-->
+<!--        <td><form action="{% url 'appointments' %}" method="post">-->
+<!--            {% csrf_token %}-->
+<!--            <input type="datetime-local" name="date">-->
+<!--            <input type="hidden" name="doctor_id" value="{{x.id}}">-->
+<!--            <input type="submit" value="MAKE APPOINTMENT" class="btn btn-info">-->
+<!--        </form>-->
+<!--        </td>-->
+<!--    </tr>-->
+
+
+<!--     {% endfor %}-->
+
+
+<!--</table>-->
+<!--    {% endif %}-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>J N M E D PATIENT</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+
+</head>
+
+<style>
+/the container must be positioned relative:/
+.custom-select {
+  position: relative;
+
+}
+
+.custom-select select {
+  display: none; /hide original SELECT element:/
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/style the arrow inside the select element:/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/point the arrow upwards when the select box is open (active):/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/style the items (options), including the selected item:/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/style items (options):/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/hide the items when the select box is closed:/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+</style>
+
+<body>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="index.html">J N M E D</a></h1>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+            <li><a  class="nav-link" href="{% url 'dr_det' %}">view doctors</a></li>
+
+
+          <li class="active"><a href="index.html">Home</a></li>
+<!--          <li><a href="#about">About</a></li>-->
+<!--          <li><a href="#menu">Menu</a></li>-->
+<!--          <li><a href="#specials">Specials</a></li>-->
+<!--          <li><a href="#events">Events</a></li>-->
+<!--          <li><a href="#gallery">Gallery</a></li>-->
+<!--          <li><a href="#chefs">Chefs</a></li>-->
+<!--          <li><a href="#contact">Contact</a></li>-->
+<!--          <li class="book-a-table text-center"><a href="{% url 'dr_login' %}">DOCTOR</a></li>-->
+<!--          <li class="book-a-table text-center"><a href="{% url 'p_log' %}">PATIENT</a></li>-->
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="heropviewdoctors" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-center" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-7">
+
+<!--        <h1><span><center><CENTRE>WELCOME</center></span></h1>-->
+
+         <div class="container-fluid" style="margin-top:80px">
+<form action="{% url 'dr_det' %}" method="post">
+    {% csrf_token %}
+<select name="specialisation" class="custom-select">
+    <option value="select" >select</option>
+    {% for x in dr_j %}
+    <option value="{{ x.specialist }}">
+        {{ x.specialist }}
+    </option>
+
+    {% endfor %}
+</select>
+    <input type="submit" value="search" class="btn btn-info">
+</form>
+    {% if doctor_list %}
+             <br>
+             <br>
+             <br>
+<table id="employee">
+    <tr>
+                <th>DOCTOR NAME</th>
+                <th>SPECIALIST</th>
+                <th>HOSPITAL</th>
+                <th>TIME</th>
+                <th>ADDRESS</th>
+                <th>FEE</th>
+        <th>ACTION</th>
+    </tr>
+     {% for x in doctor_list %}
+
+    <tr>
+        <td>{{x.name}}</td>
+        <td>{{x.specialist}}</td>
+        <td>{{x.hospital}}</td>
+        <td>{{x.consultation_period}}</td>
+        <td>{{x.address}}</td>
+        <td>{{x.fee}}</td>
+        <td><form action="{% url 'appointments' %}" method="post">
+            {% csrf_token %}
+            <input type="datetime-local" name="date">
+            <input type="hidden" name="doctor_id" value="{{x.id}}">
+            <input type="submit" onclick="jagan()" value="MAKE APPOINTMENT"class="btn btn-info">
+
+
+        </form>
+            <script>
+                function jagan(){
+                alert("successfully done");
+                }
+            </script>
+        </td>
+    </tr>
+
+
+     {% endfor %}
+
+
+</table>
+    {% endif %}
+</div>
+
+<!--          <h2>Delivering great food for more than 18 years!</h2>-->
+
+</div>
+</div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

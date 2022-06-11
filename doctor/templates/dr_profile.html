@@ -1,0 +1,231 @@
+
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>profile</title>-->
+
+<!--</head>-->
+<!--<style>-->
+
+<!--&lt;!&ndash;body {font-family: Arial, Helvetica, sans-serif;}&ndash;&gt;-->
+<!--&lt;!&ndash;* {box-sizing: border-box}&ndash;&gt;-->
+
+<!--&lt;!&ndash;input[type=text], input[type=password] {&ndash;&gt;-->
+<!--&lt;!&ndash;  width: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;  padding: 15px;&ndash;&gt;-->
+<!--&lt;!&ndash;  margin: 5px 0 22px 0;&ndash;&gt;-->
+<!--&lt;!&ndash;  display: inline-block;&ndash;&gt;-->
+<!--&lt;!&ndash;  border: none;&ndash;&gt;-->
+<!--&lt;!&ndash;  background: #f1f1f1;&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+
+<!--&lt;!&ndash;input[type=text]:focus, input[type=password]:focus {&ndash;&gt;-->
+<!--&lt;!&ndash;  background-color: #ddd;&ndash;&gt;-->
+<!--&lt;!&ndash;  outline: none;&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+
+<!--&lt;!&ndash;hr {&ndash;&gt;-->
+<!--&lt;!&ndash;  border: 1px solid #f1f1f1;&ndash;&gt;-->
+<!--&lt;!&ndash;  margin-bottom: 25px;&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+
+<!--&lt;!&ndash;button {&ndash;&gt;-->
+<!--&lt;!&ndash;  background-color: #4CAF50;&ndash;&gt;-->
+<!--&lt;!&ndash;  color: white;&ndash;&gt;-->
+<!--&lt;!&ndash;  padding: 14px 20px;&ndash;&gt;-->
+<!--&lt;!&ndash;  margin: 8px 0;&ndash;&gt;-->
+<!--&lt;!&ndash;  border: none;&ndash;&gt;-->
+<!--&lt;!&ndash;  cursor: pointer;&ndash;&gt;-->
+<!--&lt;!&ndash;  width: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;  opacity: 0.9;&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+
+<!--&lt;!&ndash;button:hover {&ndash;&gt;-->
+<!--&lt;!&ndash;  opacity:1;&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+
+<!--&lt;!&ndash;.cancelbtn {&ndash;&gt;-->
+<!--&lt;!&ndash;  padding: 14px 20px;&ndash;&gt;-->
+<!--&lt;!&ndash;  background-color: #f44336;&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+
+<!--&lt;!&ndash;.cancelbtn, .signupbtn {&ndash;&gt;-->
+<!--&lt;!&ndash;  float: left;&ndash;&gt;-->
+<!--&lt;!&ndash;  width: 50%;&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+
+<!--&lt;!&ndash;.container {&ndash;&gt;-->
+<!--&lt;!&ndash;  padding: 16px;&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+
+<!--&lt;!&ndash;.clearfix::after {&ndash;&gt;-->
+<!--&lt;!&ndash;  content: "";&ndash;&gt;-->
+<!--&lt;!&ndash;  clear: both;&ndash;&gt;-->
+<!--&lt;!&ndash;  display: table;&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+<!--&lt;!&ndash;@media screen and (max-width: 300px) {&ndash;&gt;-->
+<!--&lt;!&ndash;  .cancelbtn, .signupbtn {&ndash;&gt;-->
+<!--&lt;!&ndash;     width: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;  }&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+
+
+<!--</style>-->
+
+<!--<body>-->
+<!--<centre><h1><b><u>MY PROFILE</u></b></h1></centre>-->
+<!--<center>-->
+<!--<table>-->
+<!--     <tr><th>name<td>{{details.name}}</td></th></tr>-->
+<!--     <tr><th>specialist<td>{{details.specialist}}</td></th></tr>-->
+<!--     <tr><th>hospital<td>{{details.hospital}}</td></th></tr>-->
+<!--     <tr><th>time<td>{{details.consultation_period}}</td></th></tr>-->
+<!--     <tr><th>address<td>{{details.address}}</td></th></tr>-->
+<!--     <tr><th>fee<td>{{details.fee}}</td></th></tr>-->
+<!--</table>-->
+<!--</center>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>J N M E D PATIENT</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="index.html">J N M E D</a></h1>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li><a  class="nav-link" href="{% url 'appointmentslist' %}">APPOINTMENT</a></li>
+                    <li><a  class="nav-link" href="{% url 'dr_pro' %}">PROFILE</a></li>
+
+          <li class="active"><a href="index.html">HOME</a></li>
+<!--          <li><a href="#about">About</a></li>-->
+<!--          <li><a href="#menu">Menu</a></li>-->
+<!--          <li><a href="#specials">Specials</a></li>-->
+<!--          <li><a href="#events">Events</a></li>-->
+<!--          <li><a href="#gallery">Gallery</a></li>-->
+<!--          <li><a href="#chefs">Chefs</a></li>-->
+<!--          <li><a href="#contact">Contact</a></li>-->
+<!--          <li class="book-a-table text-center"><a href="{% url 'dr_login' %}">DOCTOR</a></li>-->
+<!--          <li class="book-a-table text-center"><a href="{% url 'p_log' %}">PATIENT</a></li>-->
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="herodoctorhome" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-center" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-7">
+
+<!--        <h1><span><center><CENTRE>WELCOME</center></span></h1>-->
+
+<!--          <h2>Delivering great food for more than 18 years!</h2>-->
+
+</div>
+</div><center>
+  <table id="employee">
+     <tr><th>name<td>{{details.name}}</td></th></tr>
+     <tr><th>specialist<td>{{details.specialist}}</td></th></tr>
+     <tr><th>hospital<td>{{details.hospital}}</td></th></tr>
+     <tr><th>time<td>{{details.consultation_period}}</td></th></tr>
+     <tr><th>address<td>{{details.address}}</td></th></tr>
+     <tr><th>fee<td>{{details.fee}}</td></th></tr>
+</table>
+</center>
+
+
+        </div>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
